@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Rihla — نادي رحلة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body dir="ltr">
+<div class="bg-route"></div>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div>
+      <div class="brand-name" id="brandName">Club Rihla</div>
+      <div class="brand-sub" id="brandSub">رحلة — voyage</div>
+    </div>
+  </div>
+  <div class="lang-toggle">
+    <button id="btnFr" class="active" onclick="setLang('fr')">FR</button>
+    <button id="btnAr" onclick="setLang('ar')">عربي</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow" id="heroEyebrow">Places limitées</div>
+  <h1 id="heroTitle">Chaque voyage commence par une place à bord.</h1>
+  <p id="heroSub">Choisissez un voyage, réservez votre place. Si c'est complet, vous le voyez tout de suite.</p>
+  <div class="route-line"><span class="dots"></span><span id="heroRouteLabel">Alger → ailleurs</span><span class="dots"></span></div>
+</div>
+
+<main>
+  <div class="section-title" id="tripsTitle">Prochains voyages</div>
+  <div class="trip-grid" id="tripGrid"></div>
+  <div class="empty-state" id="emptyState" style="display:none;"></div>
+</main>
+
+<button class="admin-fab" onclick="openAdminGate()" title="Admin">⚙</button>
+
+<div class="overlay" id="bookOverlay"><div class="modal" id="bookModal"></div></div>
+<div class="overlay" id="pinOverlay">
+  <div class="modal">
+    <h3 id="pinTitle">Connexion admin</h3>
+    <div class="field"><input type="password" id="pinInput" placeholder="Mot de passe" /></div>
+    <div class="field-error" id="pinError"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeOverlay('pinOverlay')" id="pinCancel">Annuler</button>
+      <button class="btn btn-primary" onclick="checkPin()" id="pinSubmit">OK</button>
+    </div>
+  </div>
+</div>
+<div class="overlay" id="adminOverlay"><div class="modal admin-panel" id="adminModal"></div></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
